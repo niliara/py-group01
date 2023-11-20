@@ -16,9 +16,9 @@ def main():
             turn = 1
         
         x,y = inputMove(pNames[turn-1])
-        #table = addPiece(x, y, turn, table)
+        table = addPiece(x, y, turn, table)
         printTable(table)
-        #checkWin(table)
+        checkWin(table)
 
 def inputMove(pname):
     print(f"\nTurno de {pname}!\n")
@@ -28,10 +28,8 @@ def inputMove(pname):
     return digitList[0], digitList[1]
 
 def addPiece(x, y, turn, table):
-    #CAMBIA EL VALOR DE UNA POSICION AL DEL TURNO
-    #CAMBIA TURNO
-    #COMPRUEBA SI HA GANADO
-    pass
+    table[x-1][y-1] = str(turn)
+    return table
 
 def printTable(table):
     print('0 1 2 3')
@@ -41,7 +39,29 @@ def printTable(table):
     print("")
 
 def checkWin(table):
-    pass
+	for i in range(3):
+	
+	    if table[0][i] == table[1][i] == table[2][i]:
+	
+	        if table[0][i] == "X":
+	
+	            print("X wins!")
+	
+	        elif table[0][i] == "O":
+	
+	            print("O wins!")
+	
+	
+	for i in range(3):
+	
+	    if table[i][0] == table[i][1] == table[i][2]:
+	
+	        if table[i][0] == "X":
+	
+	            print("X wins!")
+	
+	        elif table[i][0] == "O":
+	            print("O wins!")
 
 
 
