@@ -1,4 +1,5 @@
 import random
+import sys
 
 def main():
     table = [["-","-","-"], ["-","-","-"], ["-","-","-"]]
@@ -58,9 +59,11 @@ def checkWin(table):
 
             if table[0][i] == "X":
                 print("X wins!")
+                sys.exit()
 
             elif table[0][i] == "O":
                 print("O wins!")
+                sys.exit()
 
     for i in range(3):
 
@@ -68,25 +71,31 @@ def checkWin(table):
 
             if table[i][0] == "X":
                 print("X wins!")
+                sys.exit()
 
             elif table[i][0] == "O":
                 print("O wins!")
+                sys.exit()
 
     if table[0][0] == table[1][1] == table[2][2]:
 
         if table[1][1] == "X":
             print("X wins!")
+            sys.exit()
             
         elif table[1][1] == "O":
             print("O wins!")
+            sys.exit()
 
     if table[2][0] == table[1][1] == table[0][2]:
 
         if table[1][1] == "X":
             print("X wins!")
+            sys.exit()
 
         elif table[1][1] == "O":
             print("O wins!")
+            sys.exit()
 
 
 main()
